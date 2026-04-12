@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureMail Pro</title>
+  <link rel="stylesheet" href="http://localhost:6000/theme.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 24px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .app-layout {
+      display: flex;
+      height: calc(100vh - 90px);
+    }
+
+    .sidebar {
+      width: 320px;
+      background: #ffffff;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+    }
+
+    .email-item {
+      padding: 14px 16px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    .email-item:hover {
+      background: #f0f4ff;
+    }
+
+    .email-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 24px;
+      background: #fafafa;
+    }
+
+    .content h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="http://localhost:6000/logo.png" alt="Logo" />
+    </div>
+    <div>
+      <h1 style="margin:0;">SecureMail Pro</h1>
+      <div id="username">John Smith</div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" id="email-list"></aside>
+    <main class="content" id="email-content">
+      <h2>Select an email</h2>
+      <p>Email content will appear here.</p>
+    </main>
+  </div>
+
+  <script src="/main.js"></script>
+  <script src="http://localhost:6000/react-mock.js"></script>
+  <script src="http://localhost:4000/support.js"></script>
+  <script src="http://localhost:5000/weather.js"></script>
+</body>
+</html>
