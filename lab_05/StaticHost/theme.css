@@ -1,0 +1,11 @@
+#username {
+  color: rgb(72, 255, 0);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo-container img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}

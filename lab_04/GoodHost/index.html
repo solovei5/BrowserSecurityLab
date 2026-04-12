@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mail App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    input, button, select {
+      margin: 6px 0;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    .box {
+      border: 1px solid #ccc;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    #status {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 12px;
+      border-radius: 8px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mail App</h1>
+
+  <div class="box">
+    <h2>Login</h2>
+
+    <div>
+      <label>Username:</label><br>
+      <input id="username" type="text" placeholder="alice or john" />
+    </div>
+
+    <div>
+      <label>Password:</label><br>
+      <input id="password" type="password" placeholder="alice123 or john123" />
+    </div>
+
+    <div>
+      <label>Login mode:</label><br>
+      <select id="loginMode">
+        <option value="/login">Naive cookie (Path=/)</option>
+        <option value="/login-httponly">HttpOnly cookie</option>
+        <option value="/login-api-path">HttpOnly + Path=/api</option>
+      </select>
+    </div>
+
+    <button id="loginBtn">Login</button>
+    <button id="logoutBtn">Logout</button>
+
+    <p>Test users:</p>
+    <ul>
+      <li>alice / alice123</li>
+      <li>john / john123</li>
+    </ul>
+
+    <div id="status">Checking session...</div>
+  </div>
+
+  <div class="box">
+    <h2>Weather Widget Script</h2>
+    <p>Це сторонній скрипт з порту 5000:</p>
+    <script src="http://localhost:5000/weather.js"></script>
+  </div>
+
+  <div class="box">
+    <h2>Actions</h2>
+    <button id="loadEmailsBtn">Load /api/emails</button>
+    <button id="loadOtherBtn">Open /other</button>
+    <button id="showCookieBtn">Show document.cookie</button>
+    <pre id="output"></pre>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+</html>
