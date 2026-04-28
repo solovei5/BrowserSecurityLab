@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mail App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .box {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    input, button, select {
+      padding: 8px;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .email {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .email-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 12px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mail App</h1>
+
+  <div class="box">
+    <h2>Login</h2>
+
+    <div>
+      <label>Username</label><br>
+      <input id="username" type="text" placeholder="alice or john" />
+    </div>
+
+    <div>
+      <label>Password</label><br>
+      <input id="password" type="password" placeholder="alice123 or john123" />
+    </div>
+
+    <div>
+      <label>Cookie mode</label><br>
+      <select id="loginMode">
+        <option value="/login-lax">SameSite=Lax</option>
+        <option value="/login-strict">SameSite=Strict</option>
+        <option value="/login-none">SameSite=None (demo)</option>
+      </select>
+    </div>
+
+    <button id="loginBtn">Login</button>
+    <button id="logoutBtn">Logout</button>
+
+    <p>Users:</p>
+    <ul>
+      <li>alice / alice123</li>
+      <li>john / john123</li>
+    </ul>
+
+    <div id="status">Checking session...</div>
+  </div>
+
+  <div class="box">
+    <h2>Inbox</h2>
+    <button id="loadEmailsBtn">Refresh inbox</button>
+    <button id="showCsrfBtn">Show CSRF token</button>
+    <div id="emailsContainer"></div>
+  </div>
+
+  <div class="box">
+    <h2>Output</h2>
+    <pre id="output"></pre>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+</html>

